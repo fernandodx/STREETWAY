@@ -1,0 +1,21 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, ‘8.0’
+
+target 'StreetWay' do
+
+pod 'FontAwesomeKit', '~> 2.2'
+pod 'BTRatingView', '~> 1.0'
+pod 'SIAlertView', '~> 1.3'
+pod 'pop', '~> 1.0'
+pod 'Firebase', '~> 2.3'
+pod 'FBSDKCoreKit', '4.6.0-beta1'
+pod 'FBSDKLoginKit', '4.6.0-beta1'
+pod 'FBSDKShareKit', '4.6.0-beta1'
+
+
+end
+
+target 'StreetWayTests' do
+
+end
+

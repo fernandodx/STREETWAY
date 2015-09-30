@@ -1,0 +1,673 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5B08D1921B7A535500C97691 /* LocalCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B08D1911B7A535500C97691 /* LocalCollectionViewController.m */; };
+		5B08D1951B7A5ADE00C97691 /* CelulaCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B08D1941B7A5ADE00C97691 /* CelulaCollectionViewCell.m */; };
+		5B08D19D1B7C3E4A00C97691 /* DetalheViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B08D19C1B7C3E4A00C97691 /* DetalheViewController.m */; };
+		5B6B570D1B8B7CA5002C3FED /* FaceBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B570C1B8B7CA5002C3FED /* FaceBookViewController.m */; };
+		5B6E13261B6687A900558997 /* TopLocaisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E13251B6687A900558997 /* TopLocaisViewController.m */; };
+		5BB265AC1B8ACC3C0037E1D6 /* stalker1.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BB265AA1B88F8180037E1D6 /* stalker1.ttf */; };
+		5BB265AD1B8ACC3C0037E1D6 /* stalker2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BB265AB1B88F8180037E1D6 /* stalker2.ttf */; };
+		5BC21C941B6BCFE000894286 /* MapLocalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC21C921B6BCFE000894286 /* MapLocalViewController.m */; };
+		5BC21C951B6BCFE000894286 /* MapLocalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BC21C931B6BCFE000894286 /* MapLocalViewController.xib */; };
+		5BF1624B1B857D140059A101 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF1624A1B857D140059A101 /* Main.storyboard */; };
+		5BF827131B5C4761003B58D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF827121B5C4761003B58D3 /* main.m */; };
+		5BF827161B5C4761003B58D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF827151B5C4761003B58D3 /* AppDelegate.m */; };
+		5BF827191B5C4761003B58D3 /* StreetWay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5BF827171B5C4761003B58D3 /* StreetWay.xcdatamodeld */; };
+		5BF827211B5C4761003B58D3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BF827201B5C4761003B58D3 /* Images.xcassets */; };
+		5BF827241B5C4761003B58D3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BF827221B5C4761003B58D3 /* LaunchScreen.xib */; };
+		5BF827301B5C4761003B58D3 /* StreetWayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF8272F1B5C4761003B58D3 /* StreetWayTests.m */; };
+		5BF827481B5D4AC6003B58D3 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF8273B1B5D4AC6003B58D3 /* CameraViewController.m */; };
+		5BF827491B5D4AC6003B58D3 /* InicioTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF8273D1B5D4AC6003B58D3 /* InicioTabBarController.m */; };
+		5BF8274A1B5D4AC6003B58D3 /* InicioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF8273F1B5D4AC6003B58D3 /* InicioViewController.m */; };
+		5BF8274B1B5D4AC6003B58D3 /* LocalDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF827411B5D4AC6003B58D3 /* LocalDAO.m */; };
+		5BF8274C1B5D4AC6003B58D3 /* PesquisarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF827431B5D4AC6003B58D3 /* PesquisarViewController.m */; };
+		5BF8274E1B5D4AC6003B58D3 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF827471B5D4AC6003B58D3 /* Util.m */; };
+		5BF827591B5D4BBA003B58D3 /* Local.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF827581B5D4BBA003B58D3 /* Local.m */; };
+		5BF8275F1B5D4D9A003B58D3 /* RateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF8275E1B5D4D9A003B58D3 /* RateView.m */; };
+		5BF827611B5D50E7003B58D3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BF827601B5D50E7003B58D3 /* CoreData.framework */; };
+		5BF827631B5D50F8003B58D3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BF827621B5D50F8003B58D3 /* MapKit.framework */; };
+		5BF827651B5D50FE003B58D3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BF827641B5D50FE003B58D3 /* CoreLocation.framework */; };
+		5BF827681B5D535A003B58D3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BF827661B5D5116003B58D3 /* QuartzCore.framework */; };
+		5BF8276A1B5EAF4B003B58D3 /* celulaLocal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BF827691B5EAF4B003B58D3 /* celulaLocal.xib */; };
+		5BF8276D1B5EB0F8003B58D3 /* LocalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF8276C1B5EB0F8003B58D3 /* LocalTableViewCell.m */; };
+		A44CE76B0E3B3AC46F174240 /* libPods-StreetWay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 614675B915D08C760DE97DF4 /* libPods-StreetWay.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5BF8272A1B5C4761003B58D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BF827051B5C4761003B58D3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BF8270C1B5C4761003B58D3;
+			remoteInfo = StreetWay;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		58689E1484E5589AE5A2BCF8 /* Pods-StreetWay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreetWay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StreetWay/Pods-StreetWay.debug.xcconfig"; sourceTree = "<group>"; };
+		5B08D1901B7A535500C97691 /* LocalCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalCollectionViewController.h; sourceTree = "<group>"; };
+		5B08D1911B7A535500C97691 /* LocalCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalCollectionViewController.m; sourceTree = "<group>"; };
+		5B08D1931B7A5ADE00C97691 /* CelulaCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CelulaCollectionViewCell.h; sourceTree = "<group>"; };
+		5B08D1941B7A5ADE00C97691 /* CelulaCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CelulaCollectionViewCell.m; sourceTree = "<group>"; };
+		5B08D19B1B7C3E4A00C97691 /* DetalheViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetalheViewController.h; sourceTree = "<group>"; };
+		5B08D19C1B7C3E4A00C97691 /* DetalheViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetalheViewController.m; sourceTree = "<group>"; };
+		5B6B570B1B8B7CA5002C3FED /* FaceBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceBookViewController.h; sourceTree = "<group>"; };
+		5B6B570C1B8B7CA5002C3FED /* FaceBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceBookViewController.m; sourceTree = "<group>"; };
+		5B6E13241B6687A900558997 /* TopLocaisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopLocaisViewController.h; sourceTree = "<group>"; };
+		5B6E13251B6687A900558997 /* TopLocaisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopLocaisViewController.m; sourceTree = "<group>"; };
+		5BB265AA1B88F8180037E1D6 /* stalker1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = stalker1.ttf; sourceTree = "<group>"; };
+		5BB265AB1B88F8180037E1D6 /* stalker2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = stalker2.ttf; sourceTree = "<group>"; };
+		5BC21C911B6BCFE000894286 /* MapLocalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapLocalViewController.h; sourceTree = "<group>"; };
+		5BC21C921B6BCFE000894286 /* MapLocalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapLocalViewController.m; sourceTree = "<group>"; };
+		5BC21C931B6BCFE000894286 /* MapLocalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapLocalViewController.xib; sourceTree = "<group>"; };
+		5BF1624A1B857D140059A101 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5BF8270D1B5C4761003B58D3 /* StreetWay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreetWay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BF827111B5C4761003B58D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BF827121B5C4761003B58D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5BF827141B5C4761003B58D3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5BF827151B5C4761003B58D3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5BF827181B5C4761003B58D3 /* StreetWay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StreetWay.xcdatamodel; sourceTree = "<group>"; };
+		5BF827201B5C4761003B58D3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5BF827231B5C4761003B58D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		5BF827291B5C4761003B58D3 /* StreetWayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreetWayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BF8272E1B5C4761003B58D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BF8272F1B5C4761003B58D3 /* StreetWayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StreetWayTests.m; sourceTree = "<group>"; };
+		5BF8273A1B5D4AC6003B58D3 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		5BF8273B1B5D4AC6003B58D3 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		5BF8273C1B5D4AC6003B58D3 /* InicioTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InicioTabBarController.h; sourceTree = "<group>"; };
+		5BF8273D1B5D4AC6003B58D3 /* InicioTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InicioTabBarController.m; sourceTree = "<group>"; };
+		5BF8273E1B5D4AC6003B58D3 /* InicioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InicioViewController.h; sourceTree = "<group>"; };
+		5BF8273F1B5D4AC6003B58D3 /* InicioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InicioViewController.m; sourceTree = "<group>"; };
+		5BF827401B5D4AC6003B58D3 /* LocalDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalDAO.h; sourceTree = "<group>"; };
+		5BF827411B5D4AC6003B58D3 /* LocalDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalDAO.m; sourceTree = "<group>"; };
+		5BF827421B5D4AC6003B58D3 /* PesquisarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PesquisarViewController.h; sourceTree = "<group>"; };
+		5BF827431B5D4AC6003B58D3 /* PesquisarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PesquisarViewController.m; sourceTree = "<group>"; };
+		5BF827461B5D4AC6003B58D3 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		5BF827471B5D4AC6003B58D3 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
+		5BF827571B5D4BBA003B58D3 /* Local.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Local.h; sourceTree = "<group>"; };
+		5BF827581B5D4BBA003B58D3 /* Local.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Local.m; sourceTree = "<group>"; };
+		5BF8275D1B5D4D9A003B58D3 /* RateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateView.h; sourceTree = "<group>"; };
+		5BF8275E1B5D4D9A003B58D3 /* RateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateView.m; sourceTree = "<group>"; };
+		5BF827601B5D50E7003B58D3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		5BF827621B5D50F8003B58D3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		5BF827641B5D50FE003B58D3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		5BF827661B5D5116003B58D3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5BF827691B5EAF4B003B58D3 /* celulaLocal.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = celulaLocal.xib; sourceTree = "<group>"; };
+		5BF8276B1B5EB0F8003B58D3 /* LocalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalTableViewCell.h; sourceTree = "<group>"; };
+		5BF8276C1B5EB0F8003B58D3 /* LocalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalTableViewCell.m; sourceTree = "<group>"; };
+		614675B915D08C760DE97DF4 /* libPods-StreetWay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StreetWay.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA12090542C13CDAE59FE572 /* Pods-StreetWay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreetWay.release.xcconfig"; path = "Pods/Target Support Files/Pods-StreetWay/Pods-StreetWay.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5BF8270A1B5C4761003B58D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BF827681B5D535A003B58D3 /* QuartzCore.framework in Frameworks */,
+				5BF827651B5D50FE003B58D3 /* CoreLocation.framework in Frameworks */,
+				5BF827631B5D50F8003B58D3 /* MapKit.framework in Frameworks */,
+				5BF827611B5D50E7003B58D3 /* CoreData.framework in Frameworks */,
+				A44CE76B0E3B3AC46F174240 /* libPods-StreetWay.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BF827261B5C4761003B58D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		24274CB8CFEEBB3119E7640C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5BF827661B5D5116003B58D3 /* QuartzCore.framework */,
+				5BF827641B5D50FE003B58D3 /* CoreLocation.framework */,
+				5BF827621B5D50F8003B58D3 /* MapKit.framework */,
+				5BF827601B5D50E7003B58D3 /* CoreData.framework */,
+				614675B915D08C760DE97DF4 /* libPods-StreetWay.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5BB265A91B88F7C60037E1D6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5BB265AA1B88F8180037E1D6 /* stalker1.ttf */,
+				5BB265AB1B88F8180037E1D6 /* stalker2.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		5BF827041B5C4761003B58D3 = {
+			isa = PBXGroup;
+			children = (
+				5BF8270F1B5C4761003B58D3 /* StreetWay */,
+				5BF8272C1B5C4761003B58D3 /* StreetWayTests */,
+				5BF8270E1B5C4761003B58D3 /* Products */,
+				7BD76FAB5C6B08BA2382357F /* Pods */,
+				24274CB8CFEEBB3119E7640C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5BF8270E1B5C4761003B58D3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5BF8270D1B5C4761003B58D3 /* StreetWay.app */,
+				5BF827291B5C4761003B58D3 /* StreetWayTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5BF8270F1B5C4761003B58D3 /* StreetWay */ = {
+			isa = PBXGroup;
+			children = (
+				5BB265A91B88F7C60037E1D6 /* Resources */,
+				5BF827551B5D4B26003B58D3 /* DAO */,
+				5BF827541B5D4B16003B58D3 /* Utils */,
+				5BF827531B5D4AFF003B58D3 /* ViewController */,
+				5BF827521B5D4AEF003B58D3 /* View */,
+				5BF827391B5C4774003B58D3 /* CoreData */,
+				5BF827141B5C4761003B58D3 /* AppDelegate.h */,
+				5BF827151B5C4761003B58D3 /* AppDelegate.m */,
+				5BF827201B5C4761003B58D3 /* Images.xcassets */,
+				5BF1624A1B857D140059A101 /* Main.storyboard */,
+				5BF827221B5C4761003B58D3 /* LaunchScreen.xib */,
+				5BF827101B5C4761003B58D3 /* Supporting Files */,
+			);
+			path = StreetWay;
+			sourceTree = "<group>";
+		};
+		5BF827101B5C4761003B58D3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5BF827111B5C4761003B58D3 /* Info.plist */,
+				5BF827121B5C4761003B58D3 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5BF8272C1B5C4761003B58D3 /* StreetWayTests */ = {
+			isa = PBXGroup;
+			children = (
+				5BF8272F1B5C4761003B58D3 /* StreetWayTests.m */,
+				5BF8272D1B5C4761003B58D3 /* Supporting Files */,
+			);
+			path = StreetWayTests;
+			sourceTree = "<group>";
+		};
+		5BF8272D1B5C4761003B58D3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5BF8272E1B5C4761003B58D3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5BF827391B5C4774003B58D3 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				5BF827561B5D4B61003B58D3 /* Entidades */,
+				5BF827171B5C4761003B58D3 /* StreetWay.xcdatamodeld */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		5BF827521B5D4AEF003B58D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5B08D1931B7A5ADE00C97691 /* CelulaCollectionViewCell.h */,
+				5B08D1941B7A5ADE00C97691 /* CelulaCollectionViewCell.m */,
+				5BF8275D1B5D4D9A003B58D3 /* RateView.h */,
+				5BF8275E1B5D4D9A003B58D3 /* RateView.m */,
+				5BF827691B5EAF4B003B58D3 /* celulaLocal.xib */,
+				5BF8276B1B5EB0F8003B58D3 /* LocalTableViewCell.h */,
+				5BF8276C1B5EB0F8003B58D3 /* LocalTableViewCell.m */,
+				5BC21C911B6BCFE000894286 /* MapLocalViewController.h */,
+				5BC21C921B6BCFE000894286 /* MapLocalViewController.m */,
+				5BC21C931B6BCFE000894286 /* MapLocalViewController.xib */,
+				5B08D19B1B7C3E4A00C97691 /* DetalheViewController.h */,
+				5B08D19C1B7C3E4A00C97691 /* DetalheViewController.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		5BF827531B5D4AFF003B58D3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5B08D1901B7A535500C97691 /* LocalCollectionViewController.h */,
+				5B08D1911B7A535500C97691 /* LocalCollectionViewController.m */,
+				5BF8273A1B5D4AC6003B58D3 /* CameraViewController.h */,
+				5BF8273B1B5D4AC6003B58D3 /* CameraViewController.m */,
+				5BF8273C1B5D4AC6003B58D3 /* InicioTabBarController.h */,
+				5BF8273D1B5D4AC6003B58D3 /* InicioTabBarController.m */,
+				5BF8273E1B5D4AC6003B58D3 /* InicioViewController.h */,
+				5BF8273F1B5D4AC6003B58D3 /* InicioViewController.m */,
+				5BF827421B5D4AC6003B58D3 /* PesquisarViewController.h */,
+				5BF827431B5D4AC6003B58D3 /* PesquisarViewController.m */,
+				5B6E13241B6687A900558997 /* TopLocaisViewController.h */,
+				5B6E13251B6687A900558997 /* TopLocaisViewController.m */,
+				5B6B570B1B8B7CA5002C3FED /* FaceBookViewController.h */,
+				5B6B570C1B8B7CA5002C3FED /* FaceBookViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		5BF827541B5D4B16003B58D3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5BF827461B5D4AC6003B58D3 /* Util.h */,
+				5BF827471B5D4AC6003B58D3 /* Util.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		5BF827551B5D4B26003B58D3 /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				5BF827401B5D4AC6003B58D3 /* LocalDAO.h */,
+				5BF827411B5D4AC6003B58D3 /* LocalDAO.m */,
+			);
+			name = DAO;
+			sourceTree = "<group>";
+		};
+		5BF827561B5D4B61003B58D3 /* Entidades */ = {
+			isa = PBXGroup;
+			children = (
+				5BF827571B5D4BBA003B58D3 /* Local.h */,
+				5BF827581B5D4BBA003B58D3 /* Local.m */,
+			);
+			name = Entidades;
+			sourceTree = "<group>";
+		};
+		7BD76FAB5C6B08BA2382357F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				58689E1484E5589AE5A2BCF8 /* Pods-StreetWay.debug.xcconfig */,
+				EA12090542C13CDAE59FE572 /* Pods-StreetWay.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5BF8270C1B5C4761003B58D3 /* StreetWay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BF827331B5C4761003B58D3 /* Build configuration list for PBXNativeTarget "StreetWay" */;
+			buildPhases = (
+				2EA78A2F48F1CBA93E8CBC93 /* Check Pods Manifest.lock */,
+				5BF827091B5C4761003B58D3 /* Sources */,
+				5BF8270A1B5C4761003B58D3 /* Frameworks */,
+				5BF8270B1B5C4761003B58D3 /* Resources */,
+				B75600822E16AF45185A478F /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StreetWay;
+			productName = StreetWay;
+			productReference = 5BF8270D1B5C4761003B58D3 /* StreetWay.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5BF827281B5C4761003B58D3 /* StreetWayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BF827361B5C4761003B58D3 /* Build configuration list for PBXNativeTarget "StreetWayTests" */;
+			buildPhases = (
+				5BF827251B5C4761003B58D3 /* Sources */,
+				5BF827261B5C4761003B58D3 /* Frameworks */,
+				5BF827271B5C4761003B58D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BF8272B1B5C4761003B58D3 /* PBXTargetDependency */,
+			);
+			name = StreetWayTests;
+			productName = StreetWayTests;
+			productReference = 5BF827291B5C4761003B58D3 /* StreetWayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5BF827051B5C4761003B58D3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "___FernandoDias___";
+				TargetAttributes = {
+					5BF8270C1B5C4761003B58D3 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					5BF827281B5C4761003B58D3 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 5BF8270C1B5C4761003B58D3;
+					};
+				};
+			};
+			buildConfigurationList = 5BF827081B5C4761003B58D3 /* Build configuration list for PBXProject "StreetWay" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5BF827041B5C4761003B58D3;
+			productRefGroup = 5BF8270E1B5C4761003B58D3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5BF8270C1B5C4761003B58D3 /* StreetWay */,
+				5BF827281B5C4761003B58D3 /* StreetWayTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5BF8270B1B5C4761003B58D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BB265AC1B8ACC3C0037E1D6 /* stalker1.ttf in Resources */,
+				5BB265AD1B8ACC3C0037E1D6 /* stalker2.ttf in Resources */,
+				5BF8276A1B5EAF4B003B58D3 /* celulaLocal.xib in Resources */,
+				5BF1624B1B857D140059A101 /* Main.storyboard in Resources */,
+				5BC21C951B6BCFE000894286 /* MapLocalViewController.xib in Resources */,
+				5BF827241B5C4761003B58D3 /* LaunchScreen.xib in Resources */,
+				5BF827211B5C4761003B58D3 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BF827271B5C4761003B58D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2EA78A2F48F1CBA93E8CBC93 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B75600822E16AF45185A478F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StreetWay/Pods-StreetWay-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5BF827091B5C4761003B58D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B08D1921B7A535500C97691 /* LocalCollectionViewController.m in Sources */,
+				5BF8274C1B5D4AC6003B58D3 /* PesquisarViewController.m in Sources */,
+				5B08D1951B7A5ADE00C97691 /* CelulaCollectionViewCell.m in Sources */,
+				5BF8276D1B5EB0F8003B58D3 /* LocalTableViewCell.m in Sources */,
+				5BF827161B5C4761003B58D3 /* AppDelegate.m in Sources */,
+				5B6E13261B6687A900558997 /* TopLocaisViewController.m in Sources */,
+				5BF8274A1B5D4AC6003B58D3 /* InicioViewController.m in Sources */,
+				5BF827481B5D4AC6003B58D3 /* CameraViewController.m in Sources */,
+				5BF827491B5D4AC6003B58D3 /* InicioTabBarController.m in Sources */,
+				5B08D19D1B7C3E4A00C97691 /* DetalheViewController.m in Sources */,
+				5BC21C941B6BCFE000894286 /* MapLocalViewController.m in Sources */,
+				5BF8274E1B5D4AC6003B58D3 /* Util.m in Sources */,
+				5BF827191B5C4761003B58D3 /* StreetWay.xcdatamodeld in Sources */,
+				5BF827591B5D4BBA003B58D3 /* Local.m in Sources */,
+				5BF8274B1B5D4AC6003B58D3 /* LocalDAO.m in Sources */,
+				5BF8275F1B5D4D9A003B58D3 /* RateView.m in Sources */,
+				5B6B570D1B8B7CA5002C3FED /* FaceBookViewController.m in Sources */,
+				5BF827131B5C4761003B58D3 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BF827251B5C4761003B58D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BF827301B5C4761003B58D3 /* StreetWayTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5BF8272B1B5C4761003B58D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BF8270C1B5C4761003B58D3 /* StreetWay */;
+			targetProxy = 5BF8272A1B5C4761003B58D3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5BF827221B5C4761003B58D3 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BF827231B5C4761003B58D3 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5BF827311B5C4761003B58D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5BF827321B5C4761003B58D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5BF827341B5C4761003B58D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58689E1484E5589AE5A2BCF8 /* Pods-StreetWay.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = StreetWay/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5BF827351B5C4761003B58D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA12090542C13CDAE59FE572 /* Pods-StreetWay.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = StreetWay/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5BF827371B5C4761003B58D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = StreetWayTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StreetWay.app/StreetWay";
+			};
+			name = Debug;
+		};
+		5BF827381B5C4761003B58D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = StreetWayTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StreetWay.app/StreetWay";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5BF827081B5C4761003B58D3 /* Build configuration list for PBXProject "StreetWay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BF827311B5C4761003B58D3 /* Debug */,
+				5BF827321B5C4761003B58D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BF827331B5C4761003B58D3 /* Build configuration list for PBXNativeTarget "StreetWay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BF827341B5C4761003B58D3 /* Debug */,
+				5BF827351B5C4761003B58D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BF827361B5C4761003B58D3 /* Build configuration list for PBXNativeTarget "StreetWayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BF827371B5C4761003B58D3 /* Debug */,
+				5BF827381B5C4761003B58D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5BF827171B5C4761003B58D3 /* StreetWay.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5BF827181B5C4761003B58D3 /* StreetWay.xcdatamodel */,
+			);
+			currentVersion = 5BF827181B5C4761003B58D3 /* StreetWay.xcdatamodel */;
+			path = StreetWay.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5BF827051B5C4761003B58D3 /* Project object */;
+}
