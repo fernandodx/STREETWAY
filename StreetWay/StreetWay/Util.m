@@ -32,4 +32,13 @@
 
 }
 
++(UIImage *)stringBase64ToImage:(NSString *)imageBase64 {
+    NSData *data = [[NSData alloc]initWithBase64EncodedString:imageBase64 options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    return [UIImage imageWithData:data];
+}
+
++(NSString *)imageToStringBase64:(UIImage *)imagem {
+  return [UIImagePNGRepresentation(imagem) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+}
+
 @end

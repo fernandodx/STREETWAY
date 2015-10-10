@@ -14,6 +14,7 @@
 		5B6E13261B6687A900558997 /* TopLocaisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E13251B6687A900558997 /* TopLocaisViewController.m */; };
 		5BB265AC1B8ACC3C0037E1D6 /* stalker1.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BB265AA1B88F8180037E1D6 /* stalker1.ttf */; };
 		5BB265AD1B8ACC3C0037E1D6 /* stalker2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BB265AB1B88F8180037E1D6 /* stalker2.ttf */; };
+		5BBF5C151BC96A8E00B37947 /* FireBaseUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBF5C141BC96A8E00B37947 /* FireBaseUtil.m */; };
 		5BC21C941B6BCFE000894286 /* MapLocalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC21C921B6BCFE000894286 /* MapLocalViewController.m */; };
 		5BC21C951B6BCFE000894286 /* MapLocalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BC21C931B6BCFE000894286 /* MapLocalViewController.xib */; };
 		5BF1624B1B857D140059A101 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF1624A1B857D140059A101 /* Main.storyboard */; };
@@ -64,6 +65,8 @@
 		5B6E13251B6687A900558997 /* TopLocaisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopLocaisViewController.m; sourceTree = "<group>"; };
 		5BB265AA1B88F8180037E1D6 /* stalker1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = stalker1.ttf; sourceTree = "<group>"; };
 		5BB265AB1B88F8180037E1D6 /* stalker2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = stalker2.ttf; sourceTree = "<group>"; };
+		5BBF5C131BC96A8E00B37947 /* FireBaseUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FireBaseUtil.h; sourceTree = "<group>"; };
+		5BBF5C141BC96A8E00B37947 /* FireBaseUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FireBaseUtil.m; sourceTree = "<group>"; };
 		5BC21C911B6BCFE000894286 /* MapLocalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapLocalViewController.h; sourceTree = "<group>"; };
 		5BC21C921B6BCFE000894286 /* MapLocalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapLocalViewController.m; sourceTree = "<group>"; };
 		5BC21C931B6BCFE000894286 /* MapLocalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapLocalViewController.xib; sourceTree = "<group>"; };
@@ -269,6 +272,8 @@
 			children = (
 				5BF827461B5D4AC6003B58D3 /* Util.h */,
 				5BF827471B5D4AC6003B58D3 /* Util.m */,
+				5BBF5C131BC96A8E00B37947 /* FireBaseUtil.h */,
+				5BBF5C141BC96A8E00B37947 /* FireBaseUtil.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -455,6 +460,7 @@
 				5BF827591B5D4BBA003B58D3 /* Local.m in Sources */,
 				5BF8274B1B5D4AC6003B58D3 /* LocalDAO.m in Sources */,
 				5BF8275F1B5D4D9A003B58D3 /* RateView.m in Sources */,
+				5BBF5C151BC96A8E00B37947 /* FireBaseUtil.m in Sources */,
 				5B6B570D1B8B7CA5002C3FED /* FaceBookViewController.m in Sources */,
 				5BF827131B5C4761003B58D3 /* main.m in Sources */,
 			);

@@ -7,14 +7,26 @@
 //
 
 #import "Local.h"
+#import "Util.h"
 
 
 @implementation Local
 
-@dynamic nome_local;
-@dynamic imagem_local;
-@dynamic avaliacao_local;
-@dynamic latitude_local;
-@dynamic longitude_local;
+@synthesize nome_local, imagem_local, avaliacao_local, latitude_local, longitude_local;
+
+
+
++(Local *) getLocalFire:(FDataSnapshot *) dados {
+    
+    Local *local = [Local new];
+    local.nome_local = dados.value[@"nome"];
+    local.avaliacao_local = dados.value[@"avaliacao"];
+    local.longitude_local = dados.value[@"longitude"];
+    local.latitude_local = dados.value[@"latitude"];
+    local.imagem_local = [Util imageToData: [Util stringBase64ToImage:dados.value[@"imagem"]]];
+    
+    return local;
+}
+
 
 @end

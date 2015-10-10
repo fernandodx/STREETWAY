@@ -7,15 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
+#import <Firebase/Firebase.h>
 
 
-@interface Local : NSManagedObject
+
+@interface Local : NSObject
 
 @property (nonatomic, retain) NSString * nome_local;
 @property (nonatomic, retain) NSData * imagem_local;
 @property (nonatomic, retain) NSNumber * avaliacao_local;
 @property (nonatomic, retain) NSNumber * latitude_local;
 @property (nonatomic, retain) NSNumber * longitude_local;
+
+
++(Local *) getLocalFire:(FDataSnapshot *) dados;
 
 @end

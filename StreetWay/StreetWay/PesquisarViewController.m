@@ -12,6 +12,7 @@
 #import "LocalDAO.h"
 #import "LocalTableViewCell.h"
 #import "Util.h"
+#import "FireBaseUtil.h"
 
 @interface PesquisarViewController (){
     BOOL isPesquisado;
@@ -39,19 +40,77 @@
     self.tableViewLocais.dataSource = self;
     self.barraPesquisa.delegate = self;
     
-    LocalDAO* dao = [[LocalDAO alloc] init];
-    self.listaLocal = dao.consultarTodosLocais;
+    
+    Firebase *fireRef = [FireBaseUtil getFireRef];
+   
+    [fireRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        
+        if (snapshot.childrenCount == 0 ) {
+            [Util alerta:@"Alerta!" ComMenssage:@"Nenhum Local Encontrado! Que tal cadastrar um agora?"];
+        }
+        
+        FDataSnapshot* dadosEventos = [snapshot childSnapshotForPath:LOCAIS];
+        
+        for (FDataSnapshot* evento in dadosEventos.children) {
+            
+            NSMutableArray *listaLocais = [NSMutableArray new];
+            
+            if (self.listaLocal) {
+                listaLocais = [self.listaLocal mutableCopy];
+            }
+            
+            [listaLocais addObject:[Local getLocalFire:evento]];
+            
+            self.listaLocal = [[NSArray alloc] initWithArray:listaLocais];
+
+        }
+        
+        [self.tableViewLocais reloadData];
+
+    } withCancelBlock:^(NSError *error) {
+        NSLog(@"%@", error.description);
+    }];
+    
+    
+//    Firebase *fireEventos = [[Firebase alloc] initWithUrl:@"https://STREETWAY.firebaseio.com/EVENTOS"];
+//    
+//    [fireEventos  observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
+//        
+//        
+//       
+//        
+//        
+//        
+//        Local *local = [Local new];
+//        local.nome_local = snapshot.value[@"nome"];
+//        local.avaliacao_local = snapshot.value[@"avaliacao"];
+//        local.longitude_local = snapshot.value[@"longitude"];
+//        local.latitude_local = snapshot.value[@"latitude"];
+//        local.imagem_local = [Util imageToData: [Util stringBase64ToImage:snapshot.value[@"imagem"]]];
+//        
+//        
+//        NSMutableArray *listaLocais = [NSMutableArray new];
+//        
+//        if (self.listaLocal) {
+//            listaLocais = [self.listaLocal mutableCopy];
+//        }
+//        
+//        [listaLocais addObject:local];
+//        
+//        self.listaLocal = [[NSArray alloc] initWithArray:listaLocais];
+//        
+//        [self.tableViewLocais reloadData];
+//        
+//        
+//    }];
+    
+
     
 }
 
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-    
-    LocalDAO* dao = [[LocalDAO alloc] init];
-    self.listaLocal = dao.consultarTodosLocais;
-
     
 }
 

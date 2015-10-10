@@ -12,6 +12,7 @@
 #import "LocalDAO.h"
 #import "Util.h"
 #import "DetalheViewController.h"
+#import <Firebase/Firebase.h>
 
 @interface LocalCollectionViewController ()
 
@@ -37,6 +38,11 @@ static NSString * const IDENTIFICADOR_CELL = @"FOTO_LOCAL_CELL";
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+   
+}
 
 
 

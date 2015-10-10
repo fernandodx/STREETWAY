@@ -9,6 +9,8 @@
 #import "LocalDAO.h"
 #import "AppDelegate.h"
 #import "Util.h"
+#import <Firebase/Firebase.h>
+#import "FireBaseUtil.h"
 
 @implementation LocalDAO
 
@@ -49,6 +51,29 @@
         return nil;
     }
 }
+
+-(Firebase *)salvarLocalFirebase:(NSString *)nomeLocal ComImagem:(UIImage *)img
+            Eavaliacao:(float)avaliacao
+            Elatitude:(float)latitude
+            Elongitude:(float)longitude{
+        
+    NSDictionary* localDicionario = @{
+                @"nome": nomeLocal,
+                @"avaliacao" : [NSNumber numberWithFloat:avaliacao],
+                @"imagem" : [Util imageToStringBase64:img ],
+                @"latitude" :[NSNumber numberWithFloat:latitude],
+                @"longitude" : [NSNumber numberWithFloat:longitude]
+                };
+    
+    
+    Firebase *fireRef = [FireBaseUtil getFireRef];
+    Firebase *fireEventos = [fireRef childByAppendingPath:LOCAIS];
+
+    [[fireEventos childByAutoId] setValue:localDicionario];
+   
+    return nil;
+}
+
 
 -(NSArray *)consultarTodosLocais {
     

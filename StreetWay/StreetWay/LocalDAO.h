@@ -9,16 +9,19 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 #import "Local.h"
+#import <Firebase/Firebase.h>
+#import <UIKit/UIKit.h>
 
 @interface LocalDAO : NSObject
 
 @property(nonatomic, weak) NSManagedObjectContext* ctx;
 
--(Local *)salvarLocal:(NSString *)nomeLocal ComImagem:(NSData *)data
-           Eavaliacao:(float)avaliacao
-            Elatitude:(float)latitude
-           Elongitude:(float)longitude;
 -(NSArray*) consultarTodosLocais;
+
+-(Firebase *)salvarLocalFirebase:(NSString *)nomeLocal ComImagem:(UIImage *)img
+                      Eavaliacao:(float)avaliacao
+                       Elatitude:(float)latitude
+                      Elongitude:(float)longitude;
 
 
 @end

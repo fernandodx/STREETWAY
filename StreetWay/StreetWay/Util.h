@@ -14,5 +14,7 @@
 
 + (NSData *)imageToData:(UIImage *)image;
 +(void)alerta:(NSString*)titulo ComMenssage:(NSString*)menssagem;
++(UIImage *)stringBase64ToImage:(NSString *)imageBase64 ;
++(NSString *)imageToStringBase64:(UIImage *)imagem;
 
 @end

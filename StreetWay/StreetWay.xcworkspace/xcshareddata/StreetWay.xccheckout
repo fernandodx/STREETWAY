@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>27DB2802-DEC4-462B-B883-93C3C0AF3462</string>
+	<key>IDESourceControlProjectName</key>
+	<string>StreetWay</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F5E97B1928A99E8E9B752FC892DEB8E17BAE42C8</key>
+		<string>https://github.com/fernandodx/STREETWAY.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>StreetWay/StreetWay.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F5E97B1928A99E8E9B752FC892DEB8E17BAE42C8</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/fernandodx/STREETWAY.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F5E97B1928A99E8E9B752FC892DEB8E17BAE42C8</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F5E97B1928A99E8E9B752FC892DEB8E17BAE42C8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>STREETWAY</string>
+		</dict>
+	</array>
+</dict>
+</plist>

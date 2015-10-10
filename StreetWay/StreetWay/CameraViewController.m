@@ -206,65 +206,66 @@
     
     if(isOK){
         LocalDAO* dao = [[LocalDAO alloc] init];
-        Local* localSalvo = [dao salvarLocal:self.nomeLocal.text
-                                   ComImagem:[Util imageToData:self.imagemLocal.image]
+        [dao salvarLocalFirebase:self.nomeLocal.text
+                                   ComImagem:self.imagemLocal.image
                                   Eavaliacao:self.avaliacao
                                    Elatitude:location.coordinate.latitude
                                   Elongitude:location.coordinate.longitude];
         
         
-        if (localSalvo != nil) {
-            
-            
-            if(self.publicarFacebook.on) {
-                NSLog(@"Publicar no Facebook, Ainda em fase de teste");
-                
-                
-                NSDictionary *properties = @{
-                                             
-                                             @"og:type": @"books.book",
-                                             
-                                             @"og:title": @"Novo Local adicionado",
-                                             
-                                             @"og:description": @"Adicionei um novo Local.",
-                                             
-                                             @"books:isbn": @"0-553-57340-3",
-                                             
-                                             };
-                
-                FBSDKShareOpenGraphObject *object = [FBSDKShareOpenGraphObject objectWithProperties:properties];
-                
-                
-                
-                // Create an action
-                
-                FBSDKShareOpenGraphAction *action = [[FBSDKShareOpenGraphAction alloc] init];
-                
-                action.actionType = @"books.reads";
-                
-                [action setObject:object forKey:@"books:book"];
-                
-                
-                
-                
-                
-                // Create the content
-                
-                FBSDKShareOpenGraphContent *content = [[FBSDKShareOpenGraphContent alloc] init];
-                
-                content.action = action;
-                
-                content.previewPropertyName = @"books:book";
-                
-                
-                
-                [FBSDKShareDialog showFromViewController:[self.navigationController.viewControllers lastObject]
-                 
-                                             withContent:content
-                 
-                                                delegate:nil];
-            }
-            
+        
+//        if (localSalvo != nil) {
+//            
+//            
+//            if(self.publicarFacebook.on) {
+//                NSLog(@"Publicar no Facebook, Ainda em fase de teste");
+//                
+//                
+//                NSDictionary *properties = @{
+//                                             
+//                                             @"og:type": @"books.book",
+//                                             
+//                                             @"og:title": @"Novo Local adicionado",
+//                                             
+//                                             @"og:description": @"Adicionei um novo Local.",
+//                                             
+//                                             @"books:isbn": @"0-553-57340-3",
+//                                             
+//                                             };
+//                
+//                FBSDKShareOpenGraphObject *object = [FBSDKShareOpenGraphObject objectWithProperties:properties];
+//                
+//                
+//                
+//                // Create an action
+//                
+//                FBSDKShareOpenGraphAction *action = [[FBSDKShareOpenGraphAction alloc] init];
+//                
+//                action.actionType = @"books.reads";
+//                
+//                [action setObject:object forKey:@"books:book"];
+//                
+//                
+//                
+//                
+//                
+//                // Create the content
+//                
+//                FBSDKShareOpenGraphContent *content = [[FBSDKShareOpenGraphContent alloc] init];
+//                
+//                content.action = action;
+//                
+//                content.previewPropertyName = @"books:book";
+//                
+//                
+//                
+//                [FBSDKShareDialog showFromViewController:[self.navigationController.viewControllers lastObject]
+//                 
+//                                             withContent:content
+//                 
+//                                                delegate:nil];
+//            }
+        
             
             SIAlertView* alerta = [[SIAlertView alloc] initWithTitle:@"Sucesso!" andMessage:@"Parabéns novo local Salvo com Sucesso!"];
             
@@ -279,8 +280,8 @@
             [alerta show];
             
         }
-    }
-    
+//    }
+
 }
 
 #pragma mark - Protocolo BTRatingDelegate
