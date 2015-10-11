@@ -10,6 +10,9 @@
 #import "LocalTableViewCell.h"
 #import "Local.h"
 #import "LocalDAO.h"
+#import "Util.h"
+#import "FireBaseUtil.h"
+#import <Firebase/Firebase.h>
 
 @interface TopLocaisViewController ()
 
@@ -29,25 +32,51 @@
     self.tableViewTopLocais.delegate = self;
     self.tableViewTopLocais.dataSource = self;
     
-    LocalDAO* dao = [[LocalDAO alloc] init];
-    NSArray* listaLocais = dao.consultarTodosLocais;
+    Firebase *fireRef = [FireBaseUtil getFireRef];
     
-    self.listaTopLocais = [listaLocais sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+    [fireRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         
-        Local* local1 = (Local*) obj1;
-        Local* local2 = (Local*) obj2;
-        
-        if(local2 == nil || local2.avaliacao_local == nil){
-            return 0;
+        if (snapshot.childrenCount == 0 ) {
+            [Util alerta:@"Alerta!" ComMenssage:@"Nenhum Local Encontrado! Que tal cadastrar um agora?"];
         }
         
-        if(local1 == nil || local1.avaliacao_local == nil){
-            return 1;
+        FDataSnapshot* dadosEventos = [snapshot childSnapshotForPath:LOCAIS];
+        
+        for (FDataSnapshot* evento in dadosEventos.children) {
+            
+            NSMutableArray *listaLocais = [NSMutableArray new];
+            
+            if (self.listaTopLocais) {
+                listaLocais = [self.listaTopLocais mutableCopy];
+            }
+            
+            [listaLocais addObject:[Local getLocalFire:evento]];
+            
+            self.listaTopLocais = [listaLocais sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+                
+                Local* local1 = (Local*) obj1;
+                Local* local2 = (Local*) obj2;
+                
+                if(local2 == nil || local2.avaliacao_local == nil){
+                    return 0;
+                }
+                
+                if(local1 == nil || local1.avaliacao_local == nil){
+                    return 1;
+                }
+                
+                return [local2.avaliacao_local compare:local1.avaliacao_local];
+                
+            }];
+            
         }
         
-        return [local2.avaliacao_local compare:local1.avaliacao_local];
+        [self.tableViewTopLocais reloadData];
         
+    } withCancelBlock:^(NSError *error) {
+        NSLog(@"%@", error.description);
     }];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated {

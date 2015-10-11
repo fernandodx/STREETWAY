@@ -10,6 +10,8 @@
 #import "LocalDAO.h"
 #import <FontAwesomeKit/FontAwesomeKit.h>
 #import "Util.h"
+#import <Firebase/Firebase.h>
+#import "FireBaseUtil.h"
 
 @interface InicioViewController (){
 
@@ -37,26 +39,52 @@
     [super viewDidAppear:animated];
     
     [self.locationManager requestWhenInUseAuthorization];
-   
-    LocalDAO* dao = [LocalDAO new];
+
     
-    NSArray* listaLocais = [dao consultarTodosLocais];
+    NSMutableArray *listaLocais =  [NSMutableArray new];
     
-    for (Local* local in listaLocais) {
+    
+    Firebase *fireRef = [FireBaseUtil getFireRef];
+    
+    [fireRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         
-        MKPointAnnotation* ponto = [MKPointAnnotation new];
-     
-        CLLocationCoordinate2D pinCoordinate;
-        pinCoordinate.latitude = [local.latitude_local floatValue];
-        pinCoordinate.longitude = [local.longitude_local floatValue];
+        if (snapshot.childrenCount == 0 ) {
+            [Util alerta:@"Alerta!" ComMenssage:@"Nenhum Local Encontrado! Que tal cadastrar um agora?"];
+        }
         
-        [ponto setCoordinate:pinCoordinate];
+        FDataSnapshot* dadosEventos = [snapshot childSnapshotForPath:LOCAIS];
         
-        [ponto setTitle:local.nome_local];
+        for (FDataSnapshot* evento in dadosEventos.children) {
+            
+            [listaLocais addObject:[Local getLocalFire:evento]];
+            
+        }
         
-        [self.mapa addAnnotation:ponto];
+        for (Local* local in listaLocais) {
+            
+            MKPointAnnotation* ponto = [MKPointAnnotation new];
+            
+            CLLocationCoordinate2D pinCoordinate;
+            pinCoordinate.latitude = [local.latitude_local floatValue];
+            pinCoordinate.longitude = [local.longitude_local floatValue];
+            
+            [ponto setCoordinate:pinCoordinate];
+            
+            [ponto setTitle:local.nome_local];
+            
+            [self.mapa addAnnotation:ponto];
+            
+        }
+
         
-    }
+        
+    } withCancelBlock:^(NSError *error) {
+        NSLog(@"%@", error.description);
+    }];
+
+    
+    
+    
     
     if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse) {
         [self.mapa setShowsUserLocation:YES];

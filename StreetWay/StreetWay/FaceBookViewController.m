@@ -19,6 +19,7 @@
 #import <FBSDKShareKit/FBSDKShareOpenGraphContent.h>
 #import <FBSDKShareKit/FBSDKSharePhoto.h>
 #import <FontAwesomeKit/FontAwesomeKit.h>
+#import "FireBaseUtil.h"
 
 
 
@@ -37,54 +38,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    Firebase *ref = [[Firebase alloc] initWithUrl:@"https://STREETWAY.firebaseio.com"];
-//    FBSDKLoginManager *facebookLogin = [[FBSDKLoginManager alloc] init];
-//
-//    
-//    [facebookLogin logInWithPublishPermissions:@[@"publish_actions"]
-//                                    handler:^(FBSDKLoginManagerLoginResult *facebookResult, NSError *facebookError) {
-//                                        
-//                                        if (facebookError) {
-//                                            NSLog(@"Facebook login failed. Error: %@", facebookError);
-//                                        } else if (facebookResult.isCancelled) {
-//                                            NSLog(@"Facebook login got cancelled.");
-//                                        } else {
-//                                            NSString *accessToken = [[FBSDKAccessToken currentAccessToken] tokenString];
-//                                            
-//                                            [ref authWithOAuthProvider:@"facebook" token:accessToken
-//                                                   withCompletionBlock:^(NSError *error, FAuthData *authData) {
-//                                                       
-//                                                       if (error) {
-//                                                           NSLog(@"Login failed. %@", error);
-//                                                           [labelLagodo setText:@"Falha no login."];
-//                                                          
-//                                                       } else {
-//                                                           NSLog(@"Logged in! %@", authData);
-//                                                           [labelLagodo setText:@"Login realizado com sucesso!"];
-//                                                       }
-//                                                   }];
-//                                            
-//                                        }
-//                                    }];
-//    
-//    
     
+    Firebase *ref = [FireBaseUtil getFireRef];
+    FBSDKLoginManager *facebookLogin = [[FBSDKLoginManager alloc] init];
     
-    // Add a custom login button to your app
-    UIButton *myLoginButton=[UIButton buttonWithType:UIButtonTypeCustom];
-    myLoginButton.backgroundColor=[UIColor darkGrayColor];
-    myLoginButton.frame=CGRectMake(0,0,180,40);
-    myLoginButton.center = self.view.center;
-    [myLoginButton setTitle: @"My Login Button" forState: UIControlStateNormal];
-    
-    // Handle clicks on the button
-    [myLoginButton
-     addTarget:self
-     action:@selector(loginButtonClicked) forControlEvents:UIControlEventTouchUpInside];
-    
-    // Add the button to the view
-    [self.view addSubview:myLoginButton];
-   
+    [facebookLogin logInWithReadPermissions:@[@"email"]
+                                    handler:^(FBSDKLoginManagerLoginResult *facebookResult, NSError *facebookError) {
+                                        
+                                        if (facebookError) {
+                                            NSLog(@"Facebook login failed. Error: %@", facebookError);
+                                        } else if (facebookResult.isCancelled) {
+                                            NSLog(@"Facebook login got cancelled.");
+                                        } else {
+                                            NSString *accessToken = [[FBSDKAccessToken currentAccessToken] tokenString];
+                                            
+                                            [ref authWithOAuthProvider:@"facebook" token:accessToken
+                                                   withCompletionBlock:^(NSError *error, FAuthData *authData) {
+                                                       
+                                                       if (error) {
+                                                           NSLog(@"Login failed. %@", error);
+                                                       } else {
+                                                           NSLog(@"Logged in! %@", authData);
+                                                       }
+                                                   }];
+                                        }
+                                    }];
+
   }
 
 - (void)didReceiveMemoryWarning {

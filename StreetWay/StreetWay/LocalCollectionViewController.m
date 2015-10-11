@@ -13,6 +13,7 @@
 #import "Util.h"
 #import "DetalheViewController.h"
 #import <Firebase/Firebase.h>
+#import "FireBaseUtil.h"
 
 @interface LocalCollectionViewController ()
 
@@ -27,10 +28,37 @@ static NSString * const IDENTIFICADOR_CELL = @"FOTO_LOCAL_CELL";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    LocalDAO* dao = [[LocalDAO alloc] init];
-    NSArray* listaLocalBanco = dao.consultarTodosLocais;
+    Firebase *fireRef = [FireBaseUtil getFireRef];
+    
+    [fireRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        
+        if (snapshot.childrenCount == 0 ) {
+            [Util alerta:@"Alerta!" ComMenssage:@"Nenhum Local Encontrado! Que tal cadastrar um agora?"];
+        }
+        
+        FDataSnapshot* dadosEventos = [snapshot childSnapshotForPath:LOCAIS];
+        
+        for (FDataSnapshot* evento in dadosEventos.children) {
+            
+            NSMutableArray *listaLocais = [NSMutableArray new];
+            
+            if (self.listaLocal) {
+                listaLocais = [self.listaLocal mutableCopy];
+            }
+            
+            [listaLocais addObject:[Local getLocalFire:evento]];
+            
+            self.listaLocal = listaLocais;
+            
+        }
+        
+        [self.collectionView reloadData];
+        
+    } withCancelBlock:^(NSError *error) {
+        NSLog(@"%@", error.description);
+    }];
 
-    self.listaLocal = [[NSMutableArray alloc] initWithArray:listaLocalBanco];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,8 +71,6 @@ static NSString * const IDENTIFICADOR_CELL = @"FOTO_LOCAL_CELL";
     
    
 }
-
-
 
 
 #pragma mark <UICollectionViewDataSource>
@@ -71,8 +97,6 @@ static NSString * const IDENTIFICADOR_CELL = @"FOTO_LOCAL_CELL";
     
    [cell.btAbrirTelaDetalhe setTitle:local.nome_local forState:UIControlStateNormal];
     cell.btAbrirTelaDetalhe.titleLabel.font = [UIFont fontWithName:@"stalker1" size:13];
-    
-    
     
     return cell;
 }
