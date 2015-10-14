@@ -18,6 +18,7 @@
 		5BC21C941B6BCFE000894286 /* MapLocalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC21C921B6BCFE000894286 /* MapLocalViewController.m */; };
 		5BC21C951B6BCFE000894286 /* MapLocalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BC21C931B6BCFE000894286 /* MapLocalViewController.xib */; };
 		5BF1624B1B857D140059A101 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF1624A1B857D140059A101 /* Main.storyboard */; };
+		5BF1EC041BCEBAE60002768E /* LocalPontoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF1EC031BCEBAE60002768E /* LocalPontoAnnotation.m */; };
 		5BF827131B5C4761003B58D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF827121B5C4761003B58D3 /* main.m */; };
 		5BF827161B5C4761003B58D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF827151B5C4761003B58D3 /* AppDelegate.m */; };
 		5BF827191B5C4761003B58D3 /* StreetWay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5BF827171B5C4761003B58D3 /* StreetWay.xcdatamodeld */; };
@@ -71,6 +72,8 @@
 		5BC21C921B6BCFE000894286 /* MapLocalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapLocalViewController.m; sourceTree = "<group>"; };
 		5BC21C931B6BCFE000894286 /* MapLocalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapLocalViewController.xib; sourceTree = "<group>"; };
 		5BF1624A1B857D140059A101 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5BF1EC021BCEBAE60002768E /* LocalPontoAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalPontoAnnotation.h; sourceTree = "<group>"; };
+		5BF1EC031BCEBAE60002768E /* LocalPontoAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalPontoAnnotation.m; sourceTree = "<group>"; };
 		5BF8270D1B5C4761003B58D3 /* StreetWay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreetWay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF827111B5C4761003B58D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BF827121B5C4761003B58D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -242,6 +245,8 @@
 				5BC21C931B6BCFE000894286 /* MapLocalViewController.xib */,
 				5B08D19B1B7C3E4A00C97691 /* DetalheViewController.h */,
 				5B08D19C1B7C3E4A00C97691 /* DetalheViewController.m */,
+				5BF1EC021BCEBAE60002768E /* LocalPontoAnnotation.h */,
+				5BF1EC031BCEBAE60002768E /* LocalPontoAnnotation.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -455,6 +460,7 @@
 				5BF827491B5D4AC6003B58D3 /* InicioTabBarController.m in Sources */,
 				5B08D19D1B7C3E4A00C97691 /* DetalheViewController.m in Sources */,
 				5BC21C941B6BCFE000894286 /* MapLocalViewController.m in Sources */,
+				5BF1EC041BCEBAE60002768E /* LocalPontoAnnotation.m in Sources */,
 				5BF8274E1B5D4AC6003B58D3 /* Util.m in Sources */,
 				5BF827191B5C4761003B58D3 /* StreetWay.xcdatamodeld in Sources */,
 				5BF827591B5D4BBA003B58D3 /* Local.m in Sources */,

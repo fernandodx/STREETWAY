@@ -70,42 +70,7 @@
     } withCancelBlock:^(NSError *error) {
         NSLog(@"%@", error.description);
     }];
-    
-    
-//    Firebase *fireEventos = [[Firebase alloc] initWithUrl:@"https://STREETWAY.firebaseio.com/EVENTOS"];
-//    
-//    [fireEventos  observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
-//        
-//        
-//       
-//        
-//        
-//        
-//        Local *local = [Local new];
-//        local.nome_local = snapshot.value[@"nome"];
-//        local.avaliacao_local = snapshot.value[@"avaliacao"];
-//        local.longitude_local = snapshot.value[@"longitude"];
-//        local.latitude_local = snapshot.value[@"latitude"];
-//        local.imagem_local = [Util imageToData: [Util stringBase64ToImage:snapshot.value[@"imagem"]]];
-//        
-//        
-//        NSMutableArray *listaLocais = [NSMutableArray new];
-//        
-//        if (self.listaLocal) {
-//            listaLocais = [self.listaLocal mutableCopy];
-//        }
-//        
-//        [listaLocais addObject:local];
-//        
-//        self.listaLocal = [[NSArray alloc] initWithArray:listaLocais];
-//        
-//        [self.tableViewLocais reloadData];
-//        
-//        
-//    }];
-    
-
-    
+        
 }
 
 

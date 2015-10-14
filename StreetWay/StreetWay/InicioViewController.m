@@ -12,6 +12,8 @@
 #import "Util.h"
 #import <Firebase/Firebase.h>
 #import "FireBaseUtil.h"
+#import "LocalPontoAnnotation.h"
+#import "MapLocalViewController.h"
 
 @interface InicioViewController (){
 
@@ -62,13 +64,14 @@
         
         for (Local* local in listaLocais) {
             
-            MKPointAnnotation* ponto = [MKPointAnnotation new];
+            LocalPontoAnnotation* ponto = [LocalPontoAnnotation new];
             
             CLLocationCoordinate2D pinCoordinate;
             pinCoordinate.latitude = [local.latitude_local floatValue];
             pinCoordinate.longitude = [local.longitude_local floatValue];
             
             [ponto setCoordinate:pinCoordinate];
+            [ponto setLocal:local];
             
             [ponto setTitle:local.nome_local];
             
@@ -81,8 +84,6 @@
     } withCancelBlock:^(NSError *error) {
         NSLog(@"%@", error.description);
     }];
-
-    
     
     
     
@@ -170,6 +171,8 @@
         
             UIImage *flagImage = [iconeLocal imageWithSize:CGSizeMake(25, 25)];
             annotationView.image = flagImage;
+            annotationView.enabled = YES;
+            annotationView.canShowCallout = YES;
 
             //Adiciona um botão de informação no popup que subiu.
             UIButton *btPonto = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
@@ -187,9 +190,25 @@
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
     
-    [Util alerta:@"Clicou em mim!!!" ComMenssage:@"mensagem!"];
+    LocalPontoAnnotation* ponto = view.annotation;
+    
+    MapLocalViewController * map = [MapLocalViewController new];
+    map.local = ponto.local;
+    
+    [self.navigationController pushViewController:map animated:YES];
+    
+    
+    
+    
+//    [Util alerta:@"Clicou em mim!!!" ComMenssage:@"mensagem!"];
+    
+//    MyLocation *location = (MyLocation*)view.annotation;
+//    
+//    NSDictionary *launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving};
+//    [location.mapItem openInMapsWithLaunchOptions:launchOptions];
     
 }
+
 
 
 

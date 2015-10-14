@@ -214,13 +214,24 @@
         
         
         
-//        if (localSalvo != nil) {
-//            
-//            
-//            if(self.publicarFacebook.on) {
-//                NSLog(@"Publicar no Facebook, Ainda em fase de teste");
-//                
-//                
+            if(self.publicarFacebook.on) {
+                NSLog(@"Publicar no Facebook, Ainda em fase de teste");
+                
+                
+                
+                FBSDKShareOpenGraphAction *action = [[FBSDKShareOpenGraphAction alloc] init];
+                action.actionType = @"diasstreetway:publish_time";
+                
+                FBSDKShareOpenGraphContent *content = [[FBSDKShareOpenGraphContent alloc] init];
+                content.action = action;
+                content.previewPropertyName = @"{preview_property_name}";
+                FBSDKShareAPI *shareAPI = [[FBSDKShareAPI alloc] init];
+                // optionally set the delegate
+                // shareAPI.delegate = self;
+                shareAPI.shareContent = content;
+                [shareAPI share];
+                
+                
 //                NSDictionary *properties = @{
 //                                             
 //                                             @"og:type": @"books.book",
@@ -264,7 +275,7 @@
 //                                             withContent:content
 //                 
 //                                                delegate:nil];
-//            }
+            }
         
             
             SIAlertView* alerta = [[SIAlertView alloc] initWithTitle:@"Sucesso!" andMessage:@"Parabéns novo local Salvo com Sucesso!"];
