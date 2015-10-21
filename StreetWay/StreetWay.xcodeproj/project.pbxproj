@@ -17,6 +17,7 @@
 		5BBF5C151BC96A8E00B37947 /* FireBaseUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBF5C141BC96A8E00B37947 /* FireBaseUtil.m */; };
 		5BC21C941B6BCFE000894286 /* MapLocalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC21C921B6BCFE000894286 /* MapLocalViewController.m */; };
 		5BC21C951B6BCFE000894286 /* MapLocalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BC21C931B6BCFE000894286 /* MapLocalViewController.xib */; };
+		5BD6408F1BD7E9FE00B94A9A /* AlterarLocalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD6408E1BD7E9FE00B94A9A /* AlterarLocalViewController.m */; };
 		5BF1624B1B857D140059A101 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF1624A1B857D140059A101 /* Main.storyboard */; };
 		5BF1EC041BCEBAE60002768E /* LocalPontoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF1EC031BCEBAE60002768E /* LocalPontoAnnotation.m */; };
 		5BF827131B5C4761003B58D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF827121B5C4761003B58D3 /* main.m */; };
@@ -71,6 +72,8 @@
 		5BC21C911B6BCFE000894286 /* MapLocalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapLocalViewController.h; sourceTree = "<group>"; };
 		5BC21C921B6BCFE000894286 /* MapLocalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapLocalViewController.m; sourceTree = "<group>"; };
 		5BC21C931B6BCFE000894286 /* MapLocalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapLocalViewController.xib; sourceTree = "<group>"; };
+		5BD6408D1BD7E9FE00B94A9A /* AlterarLocalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlterarLocalViewController.h; sourceTree = "<group>"; };
+		5BD6408E1BD7E9FE00B94A9A /* AlterarLocalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlterarLocalViewController.m; sourceTree = "<group>"; };
 		5BF1624A1B857D140059A101 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5BF1EC021BCEBAE60002768E /* LocalPontoAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalPontoAnnotation.h; sourceTree = "<group>"; };
 		5BF1EC031BCEBAE60002768E /* LocalPontoAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalPontoAnnotation.m; sourceTree = "<group>"; };
@@ -268,6 +271,8 @@
 				5B6E13251B6687A900558997 /* TopLocaisViewController.m */,
 				5B6B570B1B8B7CA5002C3FED /* FaceBookViewController.h */,
 				5B6B570C1B8B7CA5002C3FED /* FaceBookViewController.m */,
+				5BD6408D1BD7E9FE00B94A9A /* AlterarLocalViewController.h */,
+				5BD6408E1BD7E9FE00B94A9A /* AlterarLocalViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -469,6 +474,7 @@
 				5BBF5C151BC96A8E00B37947 /* FireBaseUtil.m in Sources */,
 				5B6B570D1B8B7CA5002C3FED /* FaceBookViewController.m in Sources */,
 				5BF827131B5C4761003B58D3 /* main.m in Sources */,
+				5BD6408F1BD7E9FE00B94A9A /* AlterarLocalViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

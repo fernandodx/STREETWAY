@@ -13,6 +13,7 @@
 #import "Util.h"
 #import "FireBaseUtil.h"
 #import <Firebase/Firebase.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface TopLocaisViewController ()
 
@@ -34,7 +35,13 @@
     
     Firebase *fireRef = [FireBaseUtil getFireRef];
     
+    
+    MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"Carregando...";
+    
     [fireRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         
         if (snapshot.childrenCount == 0 ) {
             [Util alerta:@"Alerta!" ComMenssage:@"Nenhum Local Encontrado! Que tal cadastrar um agora?"];

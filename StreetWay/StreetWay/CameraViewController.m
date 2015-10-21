@@ -20,6 +20,10 @@
 #import <FBSDKShareKit/FBSDKShareOpenGraphContent.h>
 #import <FBSDKShareKit/FBSDKSharePhoto.h>
 #import <FontAwesomeKit/FontAwesomeKit.h>
+#import "FBSDKAccessToken.h"
+#import "FBSDKGraphRequest.h"
+#import "FBSDKSharePhotoContent.h"
+
 
 
 
@@ -202,34 +206,49 @@
 
 -(void)salvarLocal:(id)sender {
     
-    BOOL isOK = [self validarCamposObrigatorios];
+   // BOOL isOK = [self validarCamposObrigatorios];
     
-    if(isOK){
-        LocalDAO* dao = [[LocalDAO alloc] init];
-        [dao salvarLocalFirebase:self.nomeLocal.text
-                                   ComImagem:self.imagemLocal.image
-                                  Eavaliacao:self.avaliacao
-                                   Elatitude:location.coordinate.latitude
-                                  Elongitude:location.coordinate.longitude];
-        
+   // if(isOK){
+    if(YES){
+        //LocalDAO* dao = [[LocalDAO alloc] init];
+//        [dao salvarLocalFirebase:self.nomeLocal.text
+//                                   ComImagem:self.imagemLocal.image
+//                                  Eavaliacao:self.avaliacao
+//                                   Elatitude:location.coordinate.latitude
+//                                  Elongitude:location.coordinate.longitude];
+//        
         
         
             if(self.publicarFacebook.on) {
-                NSLog(@"Publicar no Facebook, Ainda em fase de teste");
+              
+                if ([[FBSDKAccessToken currentAccessToken] hasGranted:@"publish_actions"]) {
+                   
+                    NSString *LocalOrigem = [NSString stringWithFormat:@"%f,%f",location.coordinate.latitude, location.coordinate.longitude];
+                    
+                    NSString *url = [NSString stringWithFormat:@"http://maps.google.com/maps?saddr=%@",LocalOrigem];
+                    
+                    
+                    [[[FBSDKGraphRequest alloc]
+                      initWithGraphPath:@"me/feed"
+                      parameters: @{ @"message" : @"Adicionei um novo Local para se andar de Skate com o StreetWay.", @"link" : url, @"name" : self.nomeLocal.text, @"caption": @"Baixe o app StreetWay na AppleStore.", @"title": [NSString stringWithFormat:@"%@ esta com %@ Pontos", self.nomeLocal.text, [NSNumber numberWithFloat:self.avaliacao] ]}
+                      HTTPMethod:@"POST"]
+                     startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+                         if (!error) {
+                             NSLog(@"Post id:%@", result[@"id"]);
+                         }
+                     }];
+                }
+                
+                
+//                UIImage *someImage = self.imagemLocal.image;
+//                FBSDKSharePhotoContent *content = [[FBSDKSharePhotoContent alloc] init];
+//                content.photos = @[[FBSDKSharePhoto photoWithImage:someImage userGenerated:YES] ];
+//                // Assuming self implements <FBSDKSharingDelegate>
+//                [FBSDKShareAPI shareWithContent:content delegate:self];
+            
                 
                 
                 
-                FBSDKShareOpenGraphAction *action = [[FBSDKShareOpenGraphAction alloc] init];
-                action.actionType = @"diasstreetway:publish_time";
-                
-                FBSDKShareOpenGraphContent *content = [[FBSDKShareOpenGraphContent alloc] init];
-                content.action = action;
-                content.previewPropertyName = @"{preview_property_name}";
-                FBSDKShareAPI *shareAPI = [[FBSDKShareAPI alloc] init];
-                // optionally set the delegate
-                // shareAPI.delegate = self;
-                shareAPI.shareContent = content;
-                [shareAPI share];
                 
                 
 //                NSDictionary *properties = @{

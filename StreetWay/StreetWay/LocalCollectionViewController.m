@@ -14,6 +14,8 @@
 #import "DetalheViewController.h"
 #import <Firebase/Firebase.h>
 #import "FireBaseUtil.h"
+#import <MBProgressHUD/MBProgressHUD.h>
+#import "AlterarLocalViewController.h"
 
 @interface LocalCollectionViewController ()
 
@@ -28,9 +30,16 @@ static NSString * const IDENTIFICADOR_CELL = @"FOTO_LOCAL_CELL";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"Carregando...";
+
+    
     Firebase *fireRef = [FireBaseUtil getFireRef];
     
     [fireRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
         
         if (snapshot.childrenCount == 0 ) {
             [Util alerta:@"Alerta!" ComMenssage:@"Nenhum Local Encontrado! Que tal cadastrar um agora?"];
@@ -95,10 +104,23 @@ static NSString * const IDENTIFICADOR_CELL = @"FOTO_LOCAL_CELL";
     cell.imageQuadro.image = [UIImage imageWithData:local.imagem_local];
     cell.btAbrirTelaDetalhe.imageView.image = [UIImage imageWithData:local.imagem_local];
     
+     FAKFontAwesome* iconePlus = [FAKFontAwesome plusSquareIconWithSize:15];
+    [cell.btImageQuadro setImage:[iconePlus imageWithSize:CGSizeMake(15, 15)] forState:UIControlStateNormal];
+    [cell.btImageQuadro setTitle:@" Fotos" forState:UIControlStateNormal];
+    [cell.btImageQuadro.titleLabel setFont:[UIFont fontWithName:@"stalker1" size:13]];
+    
    [cell.btAbrirTelaDetalhe setTitle:local.nome_local forState:UIControlStateNormal];
     cell.btAbrirTelaDetalhe.titleLabel.font = [UIFont fontWithName:@"stalker1" size:13];
     
     return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+      Local* local = [self.listaLocal objectAtIndex:indexPath.row];
+    
+    
+    
 }
 
 -(void)abrirTelaDetalhe:(id)sender {
@@ -112,6 +134,11 @@ static NSString * const IDENTIFICADOR_CELL = @"FOTO_LOCAL_CELL";
         DetalheViewController *detalhe = [segue destinationViewController];
         detalhe.imageLocalSelecionado = ((UIButton*)sender).imageView.image;
     }
+    if ([[segue identifier] isEqualToString:@"alterar"]) {
+        AlterarLocalViewController* alterar = [segue destinationViewController];
+        alterar.imagemSelecionada = ((UIButton*)sender).imageView.image;
+    }
+    
 }
 
 #pragma mark <UICollectionViewDelegate>

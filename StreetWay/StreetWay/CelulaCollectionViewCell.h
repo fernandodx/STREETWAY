@@ -12,6 +12,7 @@
 
 @property(nonatomic, strong) IBOutlet UIImageView* imageQuadro;
 @property(nonatomic, strong) IBOutlet UIButton* btAbrirTelaDetalhe;
+@property(nonatomic, strong) IBOutlet UIButton* btImageQuadro;
 
 
 

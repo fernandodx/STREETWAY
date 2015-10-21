@@ -13,6 +13,7 @@
 #import "LocalTableViewCell.h"
 #import "Util.h"
 #import "FireBaseUtil.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface PesquisarViewController (){
     BOOL isPesquisado;
@@ -41,9 +42,14 @@
     self.barraPesquisa.delegate = self;
     
     
+    MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"Carregando...";
+    
     Firebase *fireRef = [FireBaseUtil getFireRef];
    
     [fireRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         
         if (snapshot.childrenCount == 0 ) {
             [Util alerta:@"Alerta!" ComMenssage:@"Nenhum Local Encontrado! Que tal cadastrar um agora?"];

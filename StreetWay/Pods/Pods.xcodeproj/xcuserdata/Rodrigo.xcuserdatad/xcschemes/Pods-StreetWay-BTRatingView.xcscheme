@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0799F66EDD5510A36F516178"
+               BlueprintIdentifier = "A7013B322005C7B0D6DA28C3"
                BuildableName = "libPods-StreetWay-BTRatingView.a"
                BlueprintName = "Pods-StreetWay-BTRatingView"
                ReferencedContainer = "container:Pods.xcodeproj">

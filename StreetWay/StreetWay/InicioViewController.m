@@ -14,6 +14,7 @@
 #import "FireBaseUtil.h"
 #import "LocalPontoAnnotation.h"
 #import "MapLocalViewController.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface InicioViewController (){
 
@@ -34,6 +35,9 @@
     [self.mapa setDelegate:self];
     [self.mapa setMapType:MKMapTypeStandard];
     [self.mapa setZoomEnabled:YES];
+    
+   MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+   hud.labelText = @"Carregando...";
    
 }
 
@@ -49,6 +53,8 @@
     Firebase *fireRef = [FireBaseUtil getFireRef];
     
     [fireRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         
         if (snapshot.childrenCount == 0 ) {
             [Util alerta:@"Alerta!" ComMenssage:@"Nenhum Local Encontrado! Que tal cadastrar um agora?"];
@@ -197,16 +203,7 @@
     
     [self.navigationController pushViewController:map animated:YES];
     
-    
-    
-    
-//    [Util alerta:@"Clicou em mim!!!" ComMenssage:@"mensagem!"];
-    
-//    MyLocation *location = (MyLocation*)view.annotation;
-//    
-//    NSDictionary *launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving};
-//    [location.mapItem openInMapsWithLaunchOptions:launchOptions];
-    
+   
 }
 
 

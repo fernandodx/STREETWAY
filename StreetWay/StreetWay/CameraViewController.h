@@ -12,8 +12,10 @@
 #import "Local.h"
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "FBSDKSharePhotoContent.h"
+#import "FBSDKSharing.h"
 
-@interface CameraViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, RateViewDelegate, CLLocationManagerDelegate, MKMapViewDelegate>
+@interface CameraViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, RateViewDelegate, CLLocationManagerDelegate, MKMapViewDelegate, FBSDKSharingDelegate>
 
 
 @property(nonatomic, strong) UIImagePickerController* imagePicker;

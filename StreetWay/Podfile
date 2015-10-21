@@ -11,6 +11,7 @@ pod 'Firebase', '~> 2.3'
 pod 'FBSDKCoreKit', '4.6.0-beta1'
 pod 'FBSDKLoginKit', '4.6.0-beta1'
 pod 'FBSDKShareKit', '4.6.0-beta1'
+pod 'MBProgressHUD', '~> 0.9'
 
 
 end
