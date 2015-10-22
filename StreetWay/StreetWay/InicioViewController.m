@@ -65,7 +65,7 @@
         for (FDataSnapshot* evento in dadosEventos.children) {
             
             [listaLocais addObject:[Local getLocalFire:evento]];
-            
+           
         }
         
         for (Local* local in listaLocais) {

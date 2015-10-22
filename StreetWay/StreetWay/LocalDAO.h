@@ -23,5 +23,6 @@
                        Elatitude:(float)latitude
                       Elongitude:(float)longitude;
 
+-(void) excluirLocal:(Local*) local;
 
 @end

@@ -12,13 +12,14 @@
 
 @implementation Local
 
-@synthesize nome_local, imagem_local, avaliacao_local, latitude_local, longitude_local;
+@synthesize nome_local, imagem_local, avaliacao_local, latitude_local, longitude_local, key;
 
 
 
 +(Local *) getLocalFire:(FDataSnapshot *) dados {
     
     Local *local = [Local new];
+    local.key = dados.key;
     local.nome_local = dados.value[@"nome"];
     local.avaliacao_local = dados.value[@"avaliacao"];
     local.longitude_local = dados.value[@"longitude"];

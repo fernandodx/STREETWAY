@@ -46,7 +46,40 @@
     hud.labelText = @"Carregando...";
     
     Firebase *fireRef = [FireBaseUtil getFireRef];
-   
+    Firebase *locaisFire = [fireRef childByAppendingPath:LOCAIS];
+    
+    //Bloco para remover da lista.
+    [locaisFire observeEventType:FEventTypeChildRemoved withBlock:^(FDataSnapshot *snapshot) {
+        
+            Local* localAdd = [Local getLocalFire:snapshot];
+            BOOL isExisteNaLista = NO;
+        
+            for (Local* lc in self.listaLocal) {
+                if([lc.nome_local isEqualToString:localAdd.nome_local]){
+                    isExisteNaLista = YES;
+                    break;
+                }
+            }
+            
+            NSMutableArray* listaNova = [self.listaLocal mutableCopy];
+            
+            if(isExisteNaLista){
+                for (int i=0; i < [listaNova count]; i++) {
+                    Local* local = [listaNova objectAtIndex:i];
+                    if([local.nome_local isEqualToString:localAdd.nome_local]){
+                        [listaNova removeObjectAtIndex:i];
+                        break;
+                    }
+                }
+            }
+            
+        self.listaLocal = [[NSArray alloc] initWithArray:listaNova];
+        
+        [self.tableViewLocais reloadData];
+    }];
+    
+    
+   //Bloco para add na lista
     [fireRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         
         [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -55,18 +88,30 @@
             [Util alerta:@"Alerta!" ComMenssage:@"Nenhum Local Encontrado! Que tal cadastrar um agora?"];
         }
         
+        NSMutableArray *listaLocais = [NSMutableArray new];
+        
         FDataSnapshot* dadosEventos = [snapshot childSnapshotForPath:LOCAIS];
         
         for (FDataSnapshot* evento in dadosEventos.children) {
-            
-            NSMutableArray *listaLocais = [NSMutableArray new];
             
             if (self.listaLocal) {
                 listaLocais = [self.listaLocal mutableCopy];
             }
             
-            [listaLocais addObject:[Local getLocalFire:evento]];
+            Local* localAdd = [Local getLocalFire:evento];
+            BOOL isExisteNaLista = NO;
             
+            for (Local* lc in listaLocais) {
+                if([lc.nome_local isEqualToString:localAdd.nome_local]){
+                    isExisteNaLista = YES;
+                    break;
+                }
+            }
+            
+            if(!isExisteNaLista){
+                [listaLocais addObject:localAdd];
+            }
+
             self.listaLocal = [[NSArray alloc] initWithArray:listaLocais];
 
         }
@@ -155,6 +200,52 @@
     [self.tableViewLocais reloadData];
     
 }
+
+
+// Override to support editing the table view.
+//adicionado por VINICIUS 07/10/2015
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    Local *localSelecionado=nil;
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        if(isPesquisado){
+            localSelecionado = [self.listaLocalEncontrado objectAtIndex:indexPath.row];
+        }else{
+            localSelecionado = [self.listaLocal objectAtIndex:indexPath.row];
+        }
+//        LocalDAO *dao=[[LocalDAO alloc]init];
+       // [dao excluirLocal:localSelecionado];
+        
+        Firebase *fireRef = [FireBaseUtil getFireRef];
+        Firebase *fireLocal = [fireRef childByAppendingPath:LOCAIS];
+        Firebase *localExcluir = [fireLocal childByAppendingPath:localSelecionado.key];
+        
+        
+        
+       
+        
+//        
+//        if(isPesquisado){
+//            self.listaLocalEncontrado=[dao consultarTodosLocais];
+//            
+//        }else{
+//            self.listaLocal=[dao consultarTodosLocais];
+//            
+//        }
+        
+        //self.listaLocalEncontrado=[dao consultarTodosLocais];
+        
+        // Delete the row from the data source
+//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        
+        [localExcluir removeValue];
+        
+//         [self.tableViewLocais reloadData];
+    }
+}
+// fim VINICIUS 07/10/2015
+
 
 
 #pragma mark - UISearchBarDelegate

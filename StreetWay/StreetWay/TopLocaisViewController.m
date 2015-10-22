@@ -35,6 +35,38 @@
     
     Firebase *fireRef = [FireBaseUtil getFireRef];
     
+    Firebase *locaisFire = [fireRef childByAppendingPath:LOCAIS];
+    
+    //Bloco para remover da lista.
+    [locaisFire observeEventType:FEventTypeChildRemoved withBlock:^(FDataSnapshot *snapshot) {
+        
+        Local* localAdd = [Local getLocalFire:snapshot];
+        BOOL isExisteNaLista = NO;
+        
+        for (Local* lc in listaTopLocais) {
+            if([lc.nome_local isEqualToString:localAdd.nome_local]){
+                isExisteNaLista = YES;
+                break;
+            }
+        }
+        
+        NSMutableArray* listaNova = [listaTopLocais mutableCopy];
+        
+        if(isExisteNaLista){
+            for (int i=0; i < [listaNova count]; i++) {
+                Local* local = [listaNova objectAtIndex:i];
+                if([local.nome_local isEqualToString:localAdd.nome_local]){
+                    [listaNova removeObjectAtIndex:i];
+                    break;
+                }
+            }
+        }
+        
+        listaTopLocais = listaNova;
+     
+    }];
+
+    
     
     MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.labelText = @"Carregando...";
@@ -57,8 +89,20 @@
                 listaLocais = [self.listaTopLocais mutableCopy];
             }
             
-            [listaLocais addObject:[Local getLocalFire:evento]];
+            Local* localAdd = [Local getLocalFire:evento];
+            BOOL isExisteNaLista = NO;
             
+            for (Local* lc in listaLocais) {
+                if([lc.nome_local isEqualToString:localAdd.nome_local]){
+                    isExisteNaLista = YES;
+                    break;
+                }
+            }
+            
+            if(!isExisteNaLista){
+                [listaLocais addObject:localAdd];
+            }
+
             self.listaTopLocais = [listaLocais sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
                 
                 Local* local1 = (Local*) obj1;

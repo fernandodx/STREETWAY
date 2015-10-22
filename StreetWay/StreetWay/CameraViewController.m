@@ -206,17 +206,17 @@
 
 -(void)salvarLocal:(id)sender {
     
-   // BOOL isOK = [self validarCamposObrigatorios];
+    BOOL isOK = [self validarCamposObrigatorios];
     
-   // if(isOK){
-    if(YES){
-        //LocalDAO* dao = [[LocalDAO alloc] init];
-//        [dao salvarLocalFirebase:self.nomeLocal.text
-//                                   ComImagem:self.imagemLocal.image
-//                                  Eavaliacao:self.avaliacao
-//                                   Elatitude:location.coordinate.latitude
-//                                  Elongitude:location.coordinate.longitude];
-//        
+    if(isOK){
+//    if(YES){
+        LocalDAO* dao = [[LocalDAO alloc] init];
+        [dao salvarLocalFirebase:self.nomeLocal.text
+                                   ComImagem:self.imagemLocal.image
+                                  Eavaliacao:self.avaliacao
+                                   Elatitude:location.coordinate.latitude
+                                  Elongitude:location.coordinate.longitude];
+        
         
         
             if(self.publicarFacebook.on) {
@@ -240,60 +240,6 @@
                 }
                 
                 
-//                UIImage *someImage = self.imagemLocal.image;
-//                FBSDKSharePhotoContent *content = [[FBSDKSharePhotoContent alloc] init];
-//                content.photos = @[[FBSDKSharePhoto photoWithImage:someImage userGenerated:YES] ];
-//                // Assuming self implements <FBSDKSharingDelegate>
-//                [FBSDKShareAPI shareWithContent:content delegate:self];
-            
-                
-                
-                
-                
-                
-//                NSDictionary *properties = @{
-//                                             
-//                                             @"og:type": @"books.book",
-//                                             
-//                                             @"og:title": @"Novo Local adicionado",
-//                                             
-//                                             @"og:description": @"Adicionei um novo Local.",
-//                                             
-//                                             @"books:isbn": @"0-553-57340-3",
-//                                             
-//                                             };
-//                
-//                FBSDKShareOpenGraphObject *object = [FBSDKShareOpenGraphObject objectWithProperties:properties];
-//                
-//                
-//                
-//                // Create an action
-//                
-//                FBSDKShareOpenGraphAction *action = [[FBSDKShareOpenGraphAction alloc] init];
-//                
-//                action.actionType = @"books.reads";
-//                
-//                [action setObject:object forKey:@"books:book"];
-//                
-//                
-//                
-//                
-//                
-//                // Create the content
-//                
-//                FBSDKShareOpenGraphContent *content = [[FBSDKShareOpenGraphContent alloc] init];
-//                
-//                content.action = action;
-//                
-//                content.previewPropertyName = @"books:book";
-//                
-//                
-//                
-//                [FBSDKShareDialog showFromViewController:[self.navigationController.viewControllers lastObject]
-//                 
-//                                             withContent:content
-//                 
-//                                                delegate:nil];
             }
         
             

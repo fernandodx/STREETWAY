@@ -59,7 +59,7 @@
                                                            NSLog(@"Login failed. %@", error);
                                                        } else {
                                                            NSLog(@"Logged in! %@", authData);
-                                                       }
+                                                        }
                                                    }];
                                         }
                                     }];

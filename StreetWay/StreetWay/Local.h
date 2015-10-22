@@ -13,6 +13,7 @@
 
 @interface Local : NSObject
 
+@property(nonatomic, retain) NSString* key;
 @property (nonatomic, retain) NSString * nome_local;
 @property (nonatomic, retain) NSData * imagem_local;
 @property (nonatomic, retain) NSNumber * avaliacao_local;

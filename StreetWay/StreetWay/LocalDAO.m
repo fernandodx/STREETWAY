@@ -103,7 +103,15 @@
     
 }
 
-
+-(void)excluirLocal:(Local *)local {
+    Firebase *fireRef = [FireBaseUtil getFireRef];
+    Firebase *fireLocal = [fireRef childByAppendingPath:LOCAIS];
+    Firebase *localExcluir = [fireLocal childByAppendingPath:local.key];
+    
+    [localExcluir removeValue];
+    
+    
+}
 
 
 
