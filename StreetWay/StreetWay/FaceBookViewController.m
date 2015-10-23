@@ -21,6 +21,7 @@
 #import <FontAwesomeKit/FontAwesomeKit.h>
 #import "FireBaseUtil.h"
 #import "Usuario.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 
 
@@ -43,12 +44,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     NSUserDefaults* preferencias = [NSUserDefaults standardUserDefaults];
     
     if([preferencias objectForKey:AUTENTICACAO_FACEBOOK] != nil){
         
-        
-        [preferencias setValue:nil forKey:AUTENTICACAO_FACEBOOK];
+//        [preferencias setValue:nil forKey:AUTENTICACAO_FACEBOOK];
         
         NSData* dados = [preferencias objectForKey:AUTENTICACAO_FACEBOOK];
         
@@ -59,8 +61,12 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             // Update the UI
+            
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             self.imageUsuario.image = [UIImage imageWithData:usuario.dadosImg];
         });
+        
+        
         
     }else{
     
@@ -111,6 +117,7 @@
                                                                
                                                                dispatch_async(dispatch_get_main_queue(), ^{
                                                                    // Update the UI
+                                                                   [MBProgressHUD hideHUDForView:self.view animated:YES];
                                                                    self.imageUsuario.image = [UIImage imageWithData:imageData];
                                                                });
                                                            });
