@@ -20,23 +20,49 @@
 #import <FBSDKShareKit/FBSDKSharePhoto.h>
 #import <FontAwesomeKit/FontAwesomeKit.h>
 #import "FireBaseUtil.h"
+#import "Usuario.h"
 
 
 
 
 @interface FaceBookViewController ()
 
-@property(nonatomic, strong) IBOutlet UILabel* labelLagodo;
+@property(nonatomic, strong) IBOutlet UILabel* nomeUsuarioLogado;
+@property(nonatomic, strong) IBOutlet UIImageView* imageUsuario;
+@property(nonatomic, strong) IBOutlet UILabel* emailUsuarioLogado;
 
 
 @end
 
 @implementation FaceBookViewController
 
-@synthesize labelLagodo;
+@synthesize nomeUsuarioLogado, imageUsuario;
+
+#define AUTENTICACAO_FACEBOOK @"LOGIN_FACEBOOK"
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSUserDefaults* preferencias = [NSUserDefaults standardUserDefaults];
+    
+    if([preferencias objectForKey:AUTENTICACAO_FACEBOOK] != nil){
+        
+        
+        [preferencias setValue:nil forKey:AUTENTICACAO_FACEBOOK];
+        
+        NSData* dados = [preferencias objectForKey:AUTENTICACAO_FACEBOOK];
+        
+        Usuario* usuario = [NSKeyedUnarchiver unarchiveObjectWithData:dados];
+        
+        self.nomeUsuarioLogado.text = usuario.nome;
+        self.emailUsuarioLogado.text = usuario.email;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // Update the UI
+            self.imageUsuario.image = [UIImage imageWithData:usuario.dadosImg];
+        });
+        
+    }else{
     
     
     Firebase *ref = [FireBaseUtil getFireRef];
@@ -59,10 +85,41 @@
                                                            NSLog(@"Login failed. %@", error);
                                                        } else {
                                                            NSLog(@"Logged in! %@", authData);
-                                                        }
+                                                           
+                                                           NSURL *imageURL = [NSURL URLWithString:authData.providerData[@"profileImageURL"]];
+
+                                                            NSData *dadosImg = [NSData dataWithContentsOfURL:imageURL];
+                                                           
+                                                           Usuario* usuario = [Usuario new];
+                                                           usuario.nome = authData.providerData[@"displayName"];
+                                                           usuario.email = authData.providerData[@"email"];
+                                                           usuario.dadosImg = dadosImg;
+                                                           
+                                                    
+                                                           NSData* dados = [NSKeyedArchiver archivedDataWithRootObject:usuario];
+                                                           
+                                                           [preferencias setObject:dados forKey:AUTENTICACAO_FACEBOOK];
+                                                           [preferencias synchronize];
+                
+                                                
+                                                           self.nomeUsuarioLogado.text = authData.providerData[@"displayName"];
+                                                           self.emailUsuarioLogado.text = authData.providerData[@"email"];
+                                                           
+                                                           
+                                                           dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+                                                               NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+                                                               
+                                                               dispatch_async(dispatch_get_main_queue(), ^{
+                                                                   // Update the UI
+                                                                   self.imageUsuario.image = [UIImage imageWithData:imageData];
+                                                               });
+                                                           });
+                                                           
+                                                       }
                                                    }];
                                         }
                                     }];
+    }
 
   }
 

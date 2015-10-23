@@ -17,6 +17,7 @@
 		5BBF5C151BC96A8E00B37947 /* FireBaseUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBF5C141BC96A8E00B37947 /* FireBaseUtil.m */; };
 		5BC21C941B6BCFE000894286 /* MapLocalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC21C921B6BCFE000894286 /* MapLocalViewController.m */; };
 		5BC21C951B6BCFE000894286 /* MapLocalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BC21C931B6BCFE000894286 /* MapLocalViewController.xib */; };
+		5BD26A921BD9D79D00FE641A /* Usuario.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD26A911BD9D79D00FE641A /* Usuario.m */; };
 		5BD6408F1BD7E9FE00B94A9A /* AlterarLocalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD6408E1BD7E9FE00B94A9A /* AlterarLocalViewController.m */; };
 		5BF1624B1B857D140059A101 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF1624A1B857D140059A101 /* Main.storyboard */; };
 		5BF1EC041BCEBAE60002768E /* LocalPontoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF1EC031BCEBAE60002768E /* LocalPontoAnnotation.m */; };
@@ -72,6 +73,8 @@
 		5BC21C911B6BCFE000894286 /* MapLocalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapLocalViewController.h; sourceTree = "<group>"; };
 		5BC21C921B6BCFE000894286 /* MapLocalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapLocalViewController.m; sourceTree = "<group>"; };
 		5BC21C931B6BCFE000894286 /* MapLocalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapLocalViewController.xib; sourceTree = "<group>"; };
+		5BD26A901BD9D79D00FE641A /* Usuario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Usuario.h; sourceTree = "<group>"; };
+		5BD26A911BD9D79D00FE641A /* Usuario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Usuario.m; sourceTree = "<group>"; };
 		5BD6408D1BD7E9FE00B94A9A /* AlterarLocalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlterarLocalViewController.h; sourceTree = "<group>"; };
 		5BD6408E1BD7E9FE00B94A9A /* AlterarLocalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlterarLocalViewController.m; sourceTree = "<group>"; };
 		5BF1624A1B857D140059A101 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -302,6 +305,8 @@
 			children = (
 				5BF827571B5D4BBA003B58D3 /* Local.h */,
 				5BF827581B5D4BBA003B58D3 /* Local.m */,
+				5BD26A901BD9D79D00FE641A /* Usuario.h */,
+				5BD26A911BD9D79D00FE641A /* Usuario.m */,
 			);
 			name = Entidades;
 			sourceTree = "<group>";
@@ -460,6 +465,7 @@
 				5BF8276D1B5EB0F8003B58D3 /* LocalTableViewCell.m in Sources */,
 				5BF827161B5C4761003B58D3 /* AppDelegate.m in Sources */,
 				5B6E13261B6687A900558997 /* TopLocaisViewController.m in Sources */,
+				5BD26A921BD9D79D00FE641A /* Usuario.m in Sources */,
 				5BF8274A1B5D4AC6003B58D3 /* InicioViewController.m in Sources */,
 				5BF827481B5D4AC6003B58D3 /* CameraViewController.m in Sources */,
 				5BF827491B5D4AC6003B58D3 /* InicioTabBarController.m in Sources */,
