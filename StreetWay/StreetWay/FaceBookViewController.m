@@ -49,8 +49,7 @@
     NSUserDefaults* preferencias = [NSUserDefaults standardUserDefaults];
     
     if([preferencias objectForKey:AUTENTICACAO_FACEBOOK] != nil){
-        
-//        [preferencias setValue:nil forKey:AUTENTICACAO_FACEBOOK];
+
         
         NSData* dados = [preferencias objectForKey:AUTENTICACAO_FACEBOOK];
         
